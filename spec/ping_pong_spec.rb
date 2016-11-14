@@ -1,20 +1,21 @@
 
 require('rspec')
 require('ping_pong')
+require('pry')
 
-number_list = []
-describe('Fixnum#ping_pong?') do
+
+describe('Fixnum#ping_pong') do
    it("count from 1 to a given number") do
-    expect(number.ping_pong?()).to(0..self)
+    expect(1.ping_pong()).to(eq([1]))
   end
     it("if number is divisible by 15 push Ping-Pong") do
-    expect(number.ping_pong?()).to(eq(0))
+    expect(15.ping_pong()).to(eq([1,2,"Ping",4,"Pong","Ping",7,8,"Ping","Pong",11,"Ping",13,14,"Ping-Pong"]))
   end
     it("if number is divisible by 5 push Pong") do
-    expect(number.ping_pong?()).to(eq(0))
+    expect(5.ping_pong()).to(eq([1,2,"Ping",4,"Pong"]))
   end
     it("if number is divisible by 3 push Ping") do
-    expect(number.ping_pong?()).to(eq(0))
+    expect(3.ping_pong()).to(eq([1,2,"Ping"]))
   end
 end
 
